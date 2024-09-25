@@ -113,16 +113,16 @@
         <h2>Product Dashboard</h2>
         <div class="grid">
             <div class="header">Categories</div>
-            <div class="user-group external-group">External Users</div>
-            <div class="user-group internal-group">Internal Users</div>
+            <div class="user-group external-group" contenteditable="true">External Users</div>
+            <div class="user-group internal-group" contenteditable="true">Internal Users</div>
             <div class="header">Any users</div>
 
             <div class="header"></div>
-            <div class="header external-user">Travellers</div>
-            <div class="header external-user">Tourism Operators</div>
-            <div class="header internal-user">TNZ website team</div>
-            <div class="header internal-user">Content Moderators</div>
-            <div class="header">Dev / Bugfixes</div>
+            <div class="header external-user" contenteditable="true">Travellers</div>
+            <div class="header external-user" contenteditable="true">Tourism Operators</div>
+            <div class="header internal-user" contenteditable="true">TNZ website team</div>
+            <div class="header internal-user" contenteditable="true">Content Moderators</div>
+            <div class="header" contenteditable="true">Dev / Bugfixes</div>
 
             <div class="category must-do">Must Do</div>
             <div class="cell category-start"><span class="item-number">1.</span><span class="item-content">See what events are taking place near me so that I  can go out with my friends </span></div>
@@ -296,13 +296,19 @@
 
         function saveToLocalStorage() {
             const cells = document.querySelectorAll('.cell');
-            const data = Array.from(cells).map(cell => {
-                return {
+            const headers = document.querySelectorAll('.header[contenteditable="true"], .user-group[contenteditable="true"]');
+            const data = {
+                cells: Array.from(cells).map(cell => ({
                     content: cell.querySelector('.item-content').innerText,
                     category: cell.closest('.grid').querySelector('.category').innerText,
                     column: Array.from(cell.parentNode.children).indexOf(cell)
-                };
-            });
+                })),
+                headers: Array.from(headers).map(header => ({
+                    content: header.innerText,
+                    class: header.className,
+                    index: Array.from(header.parentNode.children).indexOf(header)
+                }))
+            };
             localStorage.setItem('dashboardData', JSON.stringify(data));
         }
 
@@ -311,10 +317,18 @@
             if (savedData) {
                 const data = JSON.parse(savedData);
                 const grid = document.querySelector('.grid');
-                data.forEach((item) => {
+                
+                data.cells.forEach((item) => {
                     const cell = grid.querySelector(`.cell:nth-child(${item.column + 1})`);
                     if (cell) {
                         cell.querySelector('.item-content').innerText = item.content;
+                    }
+                });
+
+                data.headers.forEach((item) => {
+                    const header = grid.children[item.index];
+                    if (header && header.matches('.header[contenteditable="true"], .user-group[contenteditable="true"]')) {
+                        header.innerText = item.content;
                     }
                 });
             }
@@ -337,6 +351,17 @@
                 
                 const content = cell.querySelector('.item-content');
                 content.addEventListener('keydown', saveEdit);
+                content.addEventListener('blur', saveToLocalStorage);
+            });
+
+            document.querySelectorAll('.header[contenteditable="true"], .user-group[contenteditable="true"]').forEach(header => {
+                header.addEventListener('blur', saveToLocalStorage);
+                header.addEventListener('keydown', (event) => {
+                    if (event.key === 'Enter') {
+                        event.preventDefault();
+                        header.blur();
+                    }
+                });
             });
 
             // Add event listener for the clear cache button
