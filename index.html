@@ -26,7 +26,7 @@
         }
         .grid {
             display: grid;
-            grid-template-columns: repeat(6, minmax(200px, 1fr));
+            grid-template-columns: repeat(7, minmax(200px, 1fr));
             gap: 0;
             background-color: #ddd;
             border: 1px solid #ddd;
@@ -103,6 +103,16 @@
         .category-start {
             border-top: 3px solid #333;
         }
+        .sprint-goal {
+            background-color: #9b59b6; /* Purple color for Sprint Goal */
+            color: white;
+        }
+        .sprint-goal-cell {
+            font-weight: bold;
+        }
+        .sprint-goal-cell .item-number {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -116,6 +126,7 @@
             <div class="user-group external-group" contenteditable="true">External Users</div>
             <div class="user-group internal-group" contenteditable="true">Internal Users</div>
             <div class="header">Any users</div>
+            <div class="header sprint-goal"></div>
 
             <div class="header"></div>
             <div class="header external-user" contenteditable="true">Travellers</div>
@@ -123,6 +134,7 @@
             <div class="header internal-user" contenteditable="true">TNZ website team</div>
             <div class="header internal-user" contenteditable="true">Content Moderators</div>
             <div class="header" contenteditable="true">Dev / Bugfixes</div>
+            <div class="header sprint-goal" contenteditable="true">Sprint Goal</div>
 
             <div class="category must-do">Must Do</div>
             <div class="cell category-start"><span class="item-number">1.</span><span class="item-content">See what events are taking place near me so that I  can go out with my friends </span></div>
@@ -130,30 +142,35 @@
             <div class="cell category-start"><span class="item-number">1.</span><span class="item-content">Better API documentation so that I can consume the data i need without having to bother the other team</span></div>
             <div class="cell category-start"><span class="item-number">1.</span><span class="item-content">Automated content analysis so that i can moderate more listings every day </span></div>
             <div class="cell category-start"><span class="item-number">1.</span><span class="item-content">e.g P1 bugfix. T3 Story failing automated tests. Acceptance Criteria 3 not met</span></div>
+            <div class="cell category-start sprint-goal-cell"><span class="item-content">Enter sprint goal</span></div>
 
             <div class="cell"><span class="item-number">2.</span><span class="item-content">See what hidden gems are available in x location so i can plan my itinary</span></div>
             <div class="cell"><span class="item-number">2.</span><span class="item-content">Regular reminders so i can keep my listing up to date with corect information</span></div>
             <div class="cell"><span class="item-number">2.</span><span class="item-content">To be determined</span></div>
             <div class="cell"><span class="item-number">2.</span><span class="item-content">To be determined</span></div>
             <div class="cell"><span class="item-number">2.</span><span class="item-content">Migrate to a new database</span></div>
+            <div class="cell sprint-goal-cell"><span class="item-content">Enter sprint goal</span></div>
 
             <div class="cell"><span class="item-number">3.</span><span class="item-content">Find accomdation for my holiday by location and budget</span></div>
             <div class="cell"><span class="item-number">3.</span><span class="item-content">A way to see how my listing is performing so that ...</span></div>
             <div class="cell"><span class="item-number">3.</span><span class="item-content">To be determined</span></div>
             <div class="cell"><span class="item-number">3.</span><span class="item-content">To be determined</span></div>
             <div class="cell"><span class="item-number">3.</span><span class="item-content">Refactor function that is thorowing erros</span></div>
+            <div class="cell sprint-goal-cell"><span class="item-content">Enter sprint goal</span></div>
 
             <div class="cell"><span class="item-number">4.</span><span class="item-content">To be determined</span></div>
             <div class="cell"><span class="item-number">4.</span><span class="item-content">To be determined</span></div>
             <div class="cell"><span class="item-number">4.</span><span class="item-content">To be determined</span></div>
             <div class="cell"><span class="item-number">4.</span><span class="item-content">To be determined</span></div>
             <div class="cell"><span class="item-number">4.</span><span class="item-content">Refactor to meet digital service web accessibility standards</span></div>
+            <div class="cell sprint-goal-cell"><span class="item-content">Enter sprint goal</span></div>
 
             <div class="cell"><span class="item-number">5.</span><span class="item-content">To be determined</span></div>
             <div class="cell"><span class="item-number">5.</span><span class="item-content">To be determined</span></div>
             <div class="cell"><span class="item-number">5.</span><span class="item-content">To be determined</span></div>
             <div class="cell"><span class="item-number">5.</span><span class="item-content">To be determined</span></div>
             <div class="cell"><span class="item-number">5.</span><span class="item-content">Refactor to meet digital service web usability standards</span></div>
+            <div class="cell sprint-goal-cell"><span class="item-content">Enter sprint goal</span></div>
 
             <div class="category should-do">Should Do</div>
             <div class="cell category-start"><span class="item-number">1.</span><span class="item-content">To be determined</span></div>
@@ -161,30 +178,35 @@
             <div class="cell category-start"><span class="item-number">1.</span><span class="item-content">To be determined</span></div>
             <div class="cell category-start"><span class="item-number">1.</span><span class="item-content">To be determined</span></div>
             <div class="cell category-start"><span class="item-number">1.</span><span class="item-content">Add error logging to the application</span></div>
+            <div class="cell category-start sprint-goal-cell"><span class="item-content">Enter sprint goal</span></div>
 
             <div class="cell"><span class="item-number">2.</span><span class="item-content">To be determined</span></div>
             <div class="cell"><span class="item-number">2.</span><span class="item-content">To be determined</span></div>
             <div class="cell"><span class="item-number">2.</span><span class="item-content">To be determined</span></div>
             <div class="cell"><span class="item-number">2.</span><span class="item-content">To be determined</span></div>
             <div class="cell"><span class="item-number">2.</span><span class="item-content">To be determined</span></div>
+            <div class="cell sprint-goal-cell"><span class="item-content">Enter sprint goal</span></div>
 
             <div class="cell"><span class="item-number">3.</span><span class="item-content">To be determined</span></div>
             <div class="cell"><span class="item-number">3.</span><span class="item-content">To be determined</span></div>
             <div class="cell"><span class="item-number">3.</span><span class="item-content">To be determined</span></div>
             <div class="cell"><span class="item-number">3.</span><span class="item-content">To be determined</span></div>
             <div class="cell"><span class="item-number">3.</span><span class="item-content">To be determined</span></div>
+            <div class="cell sprint-goal-cell"><span class="item-content">Enter sprint goal</span></div>
 
             <div class="cell"><span class="item-number">4.</span><span class="item-content">To be determined</span></div>
             <div class="cell"><span class="item-number">4.</span><span class="item-content">To be determined</span></div>
             <div class="cell"><span class="item-number">4.</span><span class="item-content">To be determined</span></div>
             <div class="cell"><span class="item-number">4.</span><span class="item-content">To be determined</span></div>
             <div class="cell"><span class="item-number">4.</span><span class="item-content">To be determined</span></div>
+            <div class="cell sprint-goal-cell"><span class="item-content">Enter sprint goal</span></div>
 
             <div class="cell"><span class="item-number">5.</span><span class="item-content">To be determined</span></div>
             <div class="cell"><span class="item-number">5.</span><span class="item-content">To be determined</span></div>
             <div class="cell"><span class="item-number">5.</span><span class="item-content">To be determined</span></div>
             <div class="cell"><span class="item-number">5.</span><span class="item-content">To be determined</span></div>
             <div class="cell"><span class="item-number">5.</span><span class="item-content">To be determined</span></div>
+            <div class="cell sprint-goal-cell"><span class="item-content">Enter sprint goal</span></div>
 
             <div class="category could-do">Could Do</div>
             <div class="cell category-start"><span class="item-number">1.</span><span class="item-content">To be determined</span></div>
@@ -192,30 +214,35 @@
             <div class="cell category-start"><span class="item-number">1.</span><span class="item-content">To be determined</span></div>
             <div class="cell category-start"><span class="item-number">1.</span><span class="item-content">To be determined</span></div>
             <div class="cell category-start"><span class="item-number">1.</span><span class="item-content">To be determined</span></div>
+            <div class="cell category-start sprint-goal-cell"><span class="item-content">Enter sprint goal</span></div>
 
             <div class="cell"><span class="item-number">2.</span><span class="item-content">To be determined</span></div>
             <div class="cell"><span class="item-number">2.</span><span class="item-content">To be determined</span></div>
             <div class="cell"><span class="item-number">2.</span><span class="item-content">To be determined</span></div>
             <div class="cell"><span class="item-number">2.</span><span class="item-content">To be determined</span></div>
             <div class="cell"><span class="item-number">2.</span><span class="item-content">To be determined</span></div>
+            <div class="cell sprint-goal-cell"><span class="item-content">Enter sprint goal</span></div>
 
             <div class="cell"><span class="item-number">3.</span><span class="item-content">To be determined</span></div>
             <div class="cell"><span class="item-number">3.</span><span class="item-content">To be determined</span></div>
             <div class="cell"><span class="item-number">3.</span><span class="item-content">To be determined</span></div>
             <div class="cell"><span class="item-number">3.</span><span class="item-content">To be determined</span></div>
             <div class="cell"><span class="item-number">3.</span><span class="item-content">To be determined</span></div>
+            <div class="cell sprint-goal-cell"><span class="item-content">Enter sprint goal</span></div>
 
             <div class="cell"><span class="item-number">4.</span><span class="item-content">To be determined</span></div>
             <div class="cell"><span class="item-number">4.</span><span class="item-content">To be determined</span></div>
             <div class="cell"><span class="item-number">4.</span><span class="item-content">To be determined</span></div>
             <div class="cell"><span class="item-number">4.</span><span class="item-content">To be determined</span></div>
             <div class="cell"><span class="item-number">4.</span><span class="item-content">To be determined</span></div>
+            <div class="cell sprint-goal-cell"><span class="item-content">Enter sprint goal</span></div>
 
             <div class="cell"><span class="item-number">5.</span><span class="item-content">To be determined</span></div>
             <div class="cell"><span class="item-number">5.</span><span class="item-content">To be determined</span></div>
             <div class="cell"><span class="item-number">5.</span><span class="item-content">To be determined</span></div>
             <div class="cell"><span class="item-number">5.</span><span class="item-content">To be determined</span></div>
             <div class="cell"><span class="item-number">5.</span><span class="item-content">To be determined</span></div>
+            <div class="cell sprint-goal-cell"><span class="item-content">Enter sprint goal</span></div>
 
             <div class="category wont-do">Won't Do</div>
             <div class="cell category-start"><span class="item-number">1.</span><span class="item-content">To be determined</span></div>
@@ -223,30 +250,35 @@
             <div class="cell category-start"><span class="item-number">1.</span><span class="item-content">To be determined</span></div>
             <div class="cell category-start"><span class="item-number">1.</span><span class="item-content">To be determined</span></div>
             <div class="cell category-start"><span class="item-number">1.</span><span class="item-content">To be determined</span></div>
+            <div class="cell category-start sprint-goal-cell"><span class="item-content">Enter sprint goal</span></div>
 
             <div class="cell"><span class="item-number">2.</span><span class="item-content">To be determined</span></div>
             <div class="cell"><span class="item-number">2.</span><span class="item-content">To be determined</span></div>
             <div class="cell"><span class="item-number">2.</span><span class="item-content">To be determined</span></div>
             <div class="cell"><span class="item-number">2.</span><span class="item-content">To be determined</span></div>
             <div class="cell"><span class="item-number">2.</span><span class="item-content">To be determined</span></div>
+            <div class="cell sprint-goal-cell"><span class="item-content">Enter sprint goal</span></div>
 
             <div class="cell"><span class="item-number">3.</span><span class="item-content">To be determined</span></div>
             <div class="cell"><span class="item-number">3.</span><span class="item-content">To be determined</span></div>
             <div class="cell"><span class="item-number">3.</span><span class="item-content">To be determined</span></div>
             <div class="cell"><span class="item-number">3.</span><span class="item-content">To be determined</span></div>
             <div class="cell"><span class="item-number">3.</span><span class="item-content">To be determined</span></div>
+            <div class="cell sprint-goal-cell"><span class="item-content">Enter sprint goal</span></div>
 
             <div class="cell"><span class="item-number">4.</span><span class="item-content">To be determined</span></div>
             <div class="cell"><span class="item-number">4.</span><span class="item-content">To be determined</span></div>
             <div class="cell"><span class="item-number">4.</span><span class="item-content">To be determined</span></div>
             <div class="cell"><span class="item-number">4.</span><span class="item-content">To be determined</span></div>
             <div class="cell"><span class="item-number">4.</span><span class="item-content">To be determined</span></div>
+            <div class="cell sprint-goal-cell"><span class="item-content">Enter sprint goal</span></div>
 
             <div class="cell"><span class="item-number">5.</span><span class="item-content">To be determined</span></div>
             <div class="cell"><span class="item-number">5.</span><span class="item-content">To be determined</span></div>
             <div class="cell"><span class="item-number">5.</span><span class="item-content">To be determined</span></div>
             <div class="cell"><span class="item-number">5.</span><span class="item-content">To be determined</span></div>
             <div class="cell"><span class="item-number">5.</span><span class="item-content">To be determined</span></div>
+            <div class="cell sprint-goal-cell"><span class="item-content">Enter sprint goal</span></div>
         </div>
     </div>
     <script>
