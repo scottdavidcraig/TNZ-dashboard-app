@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourism New Zealand Database - Product Roadmap</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .dashboard {
+            max-width: 100%;
+            overflow-x: auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #0066cc;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(6, minmax(200px, 1fr));
+            gap: 0;
+            background-color: #ddd;
+            border: 1px solid #ddd;
+        }
+        .header, .cell {
+            padding: 10px;
+            background-color: white;
+            text-align: center;
+        }
+        .header {
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+            background-color: #0066cc;
+            color: white;
+        }
+        .external-user {
+            background-color: #4a90e2;
+        }
+        .internal-user {
+            background-color: #50c878;
+        }
+        .category {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            transform: rotate(180deg);
+            padding: 10px;
+            font-weight: bold;
+            color: white;
+            grid-row: span 5;
+        }
+        .must-do { background-color: #ff6b6b; }
+        .should-do { background-color: #feca57; }
+        .could-do { background-color: #48dbfb; }
+        .wont-do { background-color: #a55eea; }
+        .cell:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .cell:hover {
+            background-color: #e6f3ff;
+        }
+        .user-group {
+            grid-column: span 2;
+            text-align: center;
+            padding: 5px;
+            font-weight: bold;
+            color: white;
+        }
+        .external-group { background-color: #2c3e50; }
+        .internal-group { background-color: #27ae60; }
+        .cell {
+            display: flex;
+            align-items: flex-start;
+            padding: 10px;
+            background-color: white;
+            border-top: 1px solid #ddd;
+            border-right: 1px solid #ddd;
+            min-height: 60px; /* Add a minimum height to accommodate wrapped text */
+        }
+        .cell:last-child {
+            border-right: none;
+        }
+        .item-number {
+            flex: 0 0 20px;
+            margin-right: 5px;
+        }
+        .item-content {
+            flex: 1;
+            text-align: left;
+            word-wrap: break-word; /* Allow long words to break and wrap */
+            overflow-wrap: break-word; /* Alternative property for better browser support */
+            hyphens: auto; /* Enable automatic hyphenation */
+        }
+        .category-start {
+            border-top: 3px solid #333;
+        }
+    </style>
+</head>
+<body>
+    <!-- Add this button just after the opening <body> tag -->
+    <button id="clearCacheBtn" style="position: fixed; top: 10px; left: 10px; z-index: 1000;">Clear Cache</button>
+    <div class="dashboard">
+        <h1>Tourism New Zealand Database</h1>
+        <h2>User Stories Dashboard</h2>
+        <div class="grid">
+            <div class="header">Categories</div>
+            <div class="user-group external-group">External Users</div>
+            <div class="user-group internal-group">Internal Users</div>
+            <div class="header">Any users</div>
+
+            <div class="header"></div>
+            <div class="header external-user">Travellers</div>
+            <div class="header external-user">Tourism Operators</div>
+            <div class="header internal-user">TNZ website team</div>
+            <div class="header internal-user">Content Moderators</div>
+            <div class="header">Dev / Bugfixes</div>
+
+            <div class="category must-do">Must Do</div>
+            <div class="cell category-start"><span class="item-number">1.</span><span class="item-content">See what events are taking place near me so that I  can go out with my friends </span></div>
+            <div class="cell category-start"><span class="item-number">1.</span><span class="item-content">A better user interface so that I can ....</span></div>
+            <div class="cell category-start"><span class="item-number">1.</span><span class="item-content">Better API documentation so that I can consume the data i need without having to bother the other team</span></div>
+            <div class="cell category-start"><span class="item-number">1.</span><span class="item-content">Automated content analysis so that i can moderate more listings every day </span></div>
+            <div class="cell category-start"><span class="item-number">1.</span><span class="item-content">e.g P1 bugfix. T3 Story failing automated tests. Acceptance Criteria 3 not met</span></div>
+
+            <div class="cell"><span class="item-number">2.</span><span class="item-content">See what hidden gems are available in x location so i can plan my itinary</span></div>
+            <div class="cell"><span class="item-number">2.</span><span class="item-content">Regular reminders so i can keep my listing up to date with corect information</span></div>
+            <div class="cell"><span class="item-number">2.</span><span class="item-content">To be determined</span></div>
+            <div class="cell"><span class="item-number">2.</span><span class="item-content">To be determined</span></div>
+            <div class="cell"><span class="item-number">2.</span><span class="item-content">Migrate to a new database</span></div>
+
+            <div class="cell"><span class="item-number">3.</span><span class="item-content">Find accomdation for my holiday by location and budget</span></div>
+            <div class="cell"><span class="item-number">3.</span><span class="item-content">A way to see how my listing is performing so that ...</span></div>
+            <div class="cell"><span class="item-number">3.</span><span class="item-content">To be determined</span></div>
+            <div class="cell"><span class="item-number">3.</span><span class="item-content">To be determined</span></div>
+            <div class="cell"><span class="item-number">3.</span><span class="item-content">Refactor function that is thorowing erros</span></div>
+
+            <div class="cell"><span class="item-number">4.</span><span class="item-content">To be determined</span></div>
+            <div class="cell"><span class="item-number">4.</span><span class="item-content">To be determined</span></div>
+            <div class="cell"><span class="item-number">4.</span><span class="item-content">To be determined</span></div>
+            <div class="cell"><span class="item-number">4.</span><span class="item-content">To be determined</span></div>
+            <div class="cell"><span class="item-number">4.</span><span class="item-content">Refactor to meet digital service web accessibility standards</span></div>
+
+            <div class="cell"><span class="item-number">5.</span><span class="item-content">To be determined</span></div>
+            <div class="cell"><span class="item-number">5.</span><span class="item-content">To be determined</span></div>
+            <div class="cell"><span class="item-number">5.</span><span class="item-content">To be determined</span></div>
+            <div class="cell"><span class="item-number">5.</span><span class="item-content">To be determined</span></div>
+            <div class="cell"><span class="item-number">5.</span><span class="item-content">Refactor to meet digital service web usability standards</span></div>
+
+            <div class="category should-do">Should Do</div>
+            <div class="cell category-start"><span class="item-number">1.</span><span class="item-content">To be determined</span></div>
+            <div class="cell category-start"><span class="item-number">1.</span><span class="item-content">To be determined</span></div>
+            <div class="cell category-start"><span class="item-number">1.</span><span class="item-content">To be determined</span></div>
+            <div class="cell category-start"><span class="item-number">1.</span><span class="item-content">To be determined</span></div>
+            <div class="cell category-start"><span class="item-number">1.</span><span class="item-content">Add error logging to the application</span></div>
+
+            <div class="cell"><span class="item-number">2.</span><span class="item-content">To be determined</span></div>
+            <div class="cell"><span class="item-number">2.</span><span class="item-content">To be determined</span></div>
+            <div class="cell"><span class="item-number">2.</span><span class="item-content">To be determined</span></div>
+            <div class="cell"><span class="item-number">2.</span><span class="item-content">To be determined</span></div>
+            <div class="cell"><span class="item-number">2.</span><span class="item-content">To be determined</span></div>
+
+            <div class="cell"><span class="item-number">3.</span><span class="item-content">To be determined</span></div>
+            <div class="cell"><span class="item-number">3.</span><span class="item-content">To be determined</span></div>
+            <div class="cell"><span class="item-number">3.</span><span class="item-content">To be determined</span></div>
+            <div class="cell"><span class="item-number">3.</span><span class="item-content">To be determined</span></div>
+            <div class="cell"><span class="item-number">3.</span><span class="item-content">To be determined</span></div>
+
+            <div class="cell"><span class="item-number">4.</span><span class="item-content">To be determined</span></div>
+            <div class="cell"><span class="item-number">4.</span><span class="item-content">To be determined</span></div>
+            <div class="cell"><span class="item-number">4.</span><span class="item-content">To be determined</span></div>
+            <div class="cell"><span class="item-number">4.</span><span class="item-content">To be determined</span></div>
+            <div class="cell"><span class="item-number">4.</span><span class="item-content">To be determined</span></div>
+
+            <div class="cell"><span class="item-number">5.</span><span class="item-content">To be determined</span></div>
+            <div class="cell"><span class="item-number">5.</span><span class="item-content">To be determined</span></div>
+            <div class="cell"><span class="item-number">5.</span><span class="item-content">To be determined</span></div>
+            <div class="cell"><span class="item-number">5.</span><span class="item-content">To be determined</span></div>
+            <div class="cell"><span class="item-number">5.</span><span class="item-content">To be determined</span></div>
+
+            <div class="category could-do">Could Do</div>
+            <div class="cell category-start"><span class="item-number">1.</span><span class="item-content">To be determined</span></div>
+            <div class="cell category-start"><span class="item-number">1.</span><span class="item-content">To be determined</span></div>
+            <div class="cell category-start"><span class="item-number">1.</span><span class="item-content">To be determined</span></div>
+            <div class="cell category-start"><span class="item-number">1.</span><span class="item-content">To be determined</span></div>
+            <div class="cell category-start"><span class="item-number">1.</span><span class="item-content">To be determined</span></div>
+
+            <div class="cell"><span class="item-number">2.</span><span class="item-content">To be determined</span></div>
+            <div class="cell"><span class="item-number">2.</span><span class="item-content">To be determined</span></div>
+            <div class="cell"><span class="item-number">2.</span><span class="item-content">To be determined</span></div>
+            <div class="cell"><span class="item-number">2.</span><span class="item-content">To be determined</span></div>
+            <div class="cell"><span class="item-number">2.</span><span class="item-content">To be determined</span></div>
+
+            <div class="cell"><span class="item-number">3.</span><span class="item-content">To be determined</span></div>
+            <div class="cell"><span class="item-number">3.</span><span class="item-content">To be determined</span></div>
+            <div class="cell"><span class="item-number">3.</span><span class="item-content">To be determined</span></div>
+            <div class="cell"><span class="item-number">3.</span><span class="item-content">To be determined</span></div>
+            <div class="cell"><span class="item-number">3.</span><span class="item-content">To be determined</span></div>
+
+            <div class="cell"><span class="item-number">4.</span><span class="item-content">To be determined</span></div>
+            <div class="cell"><span class="item-number">4.</span><span class="item-content">To be determined</span></div>
+            <div class="cell"><span class="item-number">4.</span><span class="item-content">To be determined</span></div>
+            <div class="cell"><span class="item-number">4.</span><span class="item-content">To be determined</span></div>
+            <div class="cell"><span class="item-number">4.</span><span class="item-content">To be determined</span></div>
+
+            <div class="cell"><span class="item-number">5.</span><span class="item-content">To be determined</span></div>
+            <div class="cell"><span class="item-number">5.</span><span class="item-content">To be determined</span></div>
+            <div class="cell"><span class="item-number">5.</span><span class="item-content">To be determined</span></div>
+            <div class="cell"><span class="item-number">5.</span><span class="item-content">To be determined</span></div>
+            <div class="cell"><span class="item-number">5.</span><span class="item-content">To be determined</span></div>
+
+            <div class="category wont-do">Won't Do</div>
+            <div class="cell category-start"><span class="item-number">1.</span><span class="item-content">To be determined</span></div>
+            <div class="cell category-start"><span class="item-number">1.</span><span class="item-content">To be determined</span></div>
+            <div class="cell category-start"><span class="item-number">1.</span><span class="item-content">To be determined</span></div>
+            <div class="cell category-start"><span class="item-number">1.</span><span class="item-content">To be determined</span></div>
+            <div class="cell category-start"><span class="item-number">1.</span><span class="item-content">To be determined</span></div>
+
+            <div class="cell"><span class="item-number">2.</span><span class="item-content">To be determined</span></div>
+            <div class="cell"><span class="item-number">2.</span><span class="item-content">To be determined</span></div>
+            <div class="cell"><span class="item-number">2.</span><span class="item-content">To be determined</span></div>
+            <div class="cell"><span class="item-number">2.</span><span class="item-content">To be determined</span></div>
+            <div class="cell"><span class="item-number">2.</span><span class="item-content">To be determined</span></div>
+
+            <div class="cell"><span class="item-number">3.</span><span class="item-content">To be determined</span></div>
+            <div class="cell"><span class="item-number">3.</span><span class="item-content">To be determined</span></div>
+            <div class="cell"><span class="item-number">3.</span><span class="item-content">To be determined</span></div>
+            <div class="cell"><span class="item-number">3.</span><span class="item-content">To be determined</span></div>
+            <div class="cell"><span class="item-number">3.</span><span class="item-content">To be determined</span></div>
+
+            <div class="cell"><span class="item-number">4.</span><span class="item-content">To be determined</span></div>
+            <div class="cell"><span class="item-number">4.</span><span class="item-content">To be determined</span></div>
+            <div class="cell"><span class="item-number">4.</span><span class="item-content">To be determined</span></div>
+            <div class="cell"><span class="item-number">4.</span><span class="item-content">To be determined</span></div>
+            <div class="cell"><span class="item-number">4.</span><span class="item-content">To be determined</span></div>
+
+            <div class="cell"><span class="item-number">5.</span><span class="item-content">To be determined</span></div>
+            <div class="cell"><span class="item-number">5.</span><span class="item-content">To be determined</span></div>
+            <div class="cell"><span class="item-number">5.</span><span class="item-content">To be determined</span></div>
+            <div class="cell"><span class="item-number">5.</span><span class="item-content">To be determined</span></div>
+            <div class="cell"><span class="item-number">5.</span><span class="item-content">To be determined</span></div>
+        </div>
+    </div>
+    <script>
+        let draggedItem = null;
+
+        function drag(event) {
+            draggedItem = event.target.closest('.cell');
+            event.dataTransfer.setData('text/plain', draggedItem.querySelector('.item-content').innerText);
+            setTimeout(() => {
+                draggedItem.classList.add('dragging');
+            }, 0);
+        }
+
+        function allowDrop(event) {
+            event.preventDefault();
+        }
+
+        function drop(event) {
+            event.preventDefault();
+            const target = event.target.closest('.cell');
+            if (target && target !== draggedItem) {
+                const draggedContent = draggedItem.querySelector('.item-content').innerText;
+                const targetContent = target.querySelector('.item-content').innerText;
+                
+                draggedItem.querySelector('.item-content').innerText = targetContent;
+                target.querySelector('.item-content').innerText = draggedContent;
+            }
+            draggedItem.classList.remove('dragging');
+            saveToLocalStorage();
+        }
+
+        function makeEditable(event) {
+            const cell = event.target.closest('.cell');
+            const content = cell.querySelector('.item-content');
+            content.contentEditable = true;
+            content.focus();
+        }
+
+        function saveEdit(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                const content = event.target;
+                content.contentEditable = false;
+                saveToLocalStorage();
+            }
+        }
+
+        function saveToLocalStorage() {
+            const cells = document.querySelectorAll('.cell');
+            const data = Array.from(cells).map(cell => {
+                return {
+                    content: cell.querySelector('.item-content').innerText,
+                    category: cell.closest('.grid').querySelector('.category').innerText,
+                    column: Array.from(cell.parentNode.children).indexOf(cell)
+                };
+            });
+            localStorage.setItem('dashboardData', JSON.stringify(data));
+        }
+
+        function loadFromLocalStorage() {
+            const savedData = localStorage.getItem('dashboardData');
+            if (savedData) {
+                const data = JSON.parse(savedData);
+                const grid = document.querySelector('.grid');
+                data.forEach((item) => {
+                    const cell = grid.querySelector(`.cell:nth-child(${item.column + 1})`);
+                    if (cell) {
+                        cell.querySelector('.item-content').innerText = item.content;
+                    }
+                });
+            }
+        }
+
+        function clearCache() {
+            localStorage.removeItem('dashboardData');
+            location.reload(); // Reload the page to reset the dashboard
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadFromLocalStorage();
+
+            document.querySelectorAll('.cell').forEach(cell => {
+                cell.setAttribute('draggable', 'true');
+                cell.addEventListener('dragstart', drag);
+                cell.addEventListener('dragover', allowDrop);
+                cell.addEventListener('drop', drop);
+                cell.addEventListener('dblclick', makeEditable);
+                
+                const content = cell.querySelector('.item-content');
+                content.addEventListener('keydown', saveEdit);
+            });
+
+            // Add event listener for the clear cache button
+            document.getElementById('clearCacheBtn').addEventListener('click', clearCache);
+        });
+    </script>
+</body>
+</html>
